@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
-const porta = process.env.PORT || 8080;
+
 
 //Models
 const TodoTask = require("./models/TodoTask");
@@ -19,7 +19,7 @@ mongoose.set("useFindAndModify", false);
 mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => {
   console.log("Connected to db!");
 
-  app.listen(porta, () => console.log("Servidor rodando!"));
+  app.listen(7000, () => console.log("Servidor rodando!"));
 });
 
 //view engine configuration
